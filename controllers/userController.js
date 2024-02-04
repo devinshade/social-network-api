@@ -39,6 +39,24 @@ module.exports = {
             return res.status(500).json(err);
         }
     },
+    // update user by id
+    async updateUser(req, res) {
+        try {
+            const user = await User.findOneAndUpdate(
+                { _id: req.params.userId },
+                { $set: req.body },
+                { runValidators: true, new: true }
+            );
+
+            if (!user) {
+                res.status(404).json({ message: 'No user with this Id idiot' });
+            }
+
+            res.json(user);
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    },
     // create a new user
     async createUser(req, res) {
         try {
@@ -72,6 +90,49 @@ module.exports = {
             res.json({ message: 'User successfully deleted' });
         } catch (err) {
             console.log(err);
+            res.status(500).json(err);
+        }
+    },
+     // add friend
+    async addFriend(req, res) {
+        console.log('You are adding a friend');
+        console.log(req.body);
+
+        try {
+            const user = await User.findOneAndUpdate(
+                { _id: req.params.thoughtId },
+                { $addToSet: { friends: req.body } },
+                { runValidators: true, new: true },
+            );
+
+            if (!user) {
+                return res
+                    .status(404)
+                    .json({ message: 'No friend found with that Id idiot' });
+            }
+
+            res.json(user);
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    },
+    // delete friend
+    async removeFriend(req, res) {
+        try {
+            const user = await User.findOneAndUpdate(
+                { _id: req.params.userId },
+                { $pull: { friends: { friendId: req.params.friendId } } },
+                { runValidators: true, new: true }
+            );
+
+            if (!user) {
+                return res
+                .status(404)
+                .json({ message: 'No friend found with that Id idiot' });
+            }
+
+            res.json(user);
+        } catch (err) {
             res.status(500).json(err);
         }
     },

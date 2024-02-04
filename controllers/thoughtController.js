@@ -83,7 +83,7 @@ module.exports = {
             if (!thought) {
                 return res
                     .status(404)
-                    .json({ message: 'No thought found with that ID idiot' });
+                    .json({ message: 'No thought found with that Id idiot' });
             }
 
             res.json(thought);
