@@ -17,63 +17,52 @@
   node, express.js, mongoDB
   
   ## Usage
-  
-  ## API Routes
-    ## Users
 
-    GET /api/users
+  ### API Routes
 
-    Retrieve information about all users in the database.
+### Users
 
-    POST /api/users
+GET /api/users </br>
+Retrieve information about all users in the database.
 
-    Create a new user in the database.
+POST /api/users</br>
+Create a new user in the database.
 
-    PUT /api/users/:userId
+PUT /api/users/:userId</br>
+Update information for a specific user.
 
-    Update information for a specific user.
+DELETE /api/users/:userId</br>
+Delete a user from the database.
 
-    DELETE /api/users/:userId
+### Thoughts
 
-    Delete a user from the database.
+GET /api/thoughts <br>
+Retrieve information about all thoughts in the database.
 
-    ## Thoughts
+POST /api/thoughts <br>
+Create a new thought in the database.
 
-    GET /api/thoughts
+PUT /api/thoughts/:thoughtId <br>
+Update information for a specific thought.
 
-    Retrieve information about all thoughts in the database.
+DELETE /api/thoughts/:thoughtId <br>
+Delete a thought from the database.
 
-    POST /api/thoughts
+### Reactions
 
-    Create a new thought in the database.
+POST /api/reactions <br>
+Create a new reaction to a thought.
 
-    PUT /api/thoughts/:thoughtId
+DELETE /api/reactions/:reactionId <br>
+Delete a reaction from the database.
 
-    Update information for a specific thought.
+### Friends
 
-    DELETE /api/thoughts/:thoughtId
+POST /api/friends/:userId <br>
+Add a user to the friend list of another user.
 
-    Delete a thought from the database.
-
-    ## Reactions
-    
-    POST /api/reactions
-    
-    Create a new reaction to a thought.
-
-    DELETE /api/reactions/:reactionId
-
-    Delete a reaction from the database.
-
-    ## Friends
-
-    POST /api/friends/:userId
-
-    Add a user to the friend list of another user.
-
-    DELETE /api/friends/:userId
-
-    Remove a user from the friend list of another user.
+DELETE /api/friends/:userId <br>
+Remove a user from the friend list of another user.
   
   ## License
   
