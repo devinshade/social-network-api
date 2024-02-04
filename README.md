@@ -18,8 +18,8 @@
   
   ## Usage
   
-  # API Routes
-    # Users
+  ## API Routes
+    ## Users
 
     GET /api/users
 
@@ -37,7 +37,7 @@
 
     Delete a user from the database.
 
-    # Thoughts
+    ## Thoughts
 
     GET /api/thoughts
 
@@ -55,7 +55,7 @@
 
     Delete a thought from the database.
 
-    # Reactions
+    ## Reactions
     
     POST /api/reactions
     
@@ -65,7 +65,7 @@
 
     Delete a reaction from the database.
 
-    # Friends
+    ## Friends
 
     POST /api/friends/:userId
 
